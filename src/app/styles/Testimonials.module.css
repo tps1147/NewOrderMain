@@ -1,38 +1,74 @@
 .testimonials {
-  padding: 4rem 2rem;
-  background-color: #f8f8f8;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .testimonials h2 {
   text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
+  font-size: 2.8rem;
+  color: #004d40;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonialGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonialCard {
-  background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .testimonialCard p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666;
-  font-style: italic;
-  margin-bottom: 1rem;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .testimonialCard h3 {
-  font-size: 1rem;
-  color: #333;
-  text-align: right;
+  font-size: 19px;
+  color: #00796b;
 }

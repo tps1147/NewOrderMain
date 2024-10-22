@@ -85,12 +85,12 @@ const ParallaxSection = ({ imageUrl, title, description, isBottom = false }) => 
               ease: "easeInOut"
             }}
           />
-          <motion.div
+          {/* <motion.div
             className={styles.monkey}
             initial={{ y: 50, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-          />
+          /> */}
         </div>
       )}
     </div>
