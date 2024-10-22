@@ -1,6 +1,6 @@
 .testimonials {
   padding: 80px 40px;
-  background: linear-gradient(135deg, #e0f7fa, #80deea);
+  background: linear-gradient(135deg, #4151a3, #081242);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   margin: 40px;
@@ -33,7 +33,7 @@
 .testimonials h2 {
   text-align: center;
   font-size: 2.8rem;
-  color: #004d40;
+  color: #ffffff;
   margin-bottom: 3rem;
   position: relative;
   z-index: 1;
