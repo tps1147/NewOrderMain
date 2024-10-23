@@ -2,61 +2,68 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from 'next/link';
 import styles from '../styles/ParallaxSection.module.css';
+import { Raleway } from 'next/font/google';
 
-const ParallaxSection = ({ imageUrl, title, description, isBottom = false }) => {
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['400', '700'], // You can specify the weights you need
+});
+
+const ParallaxSection = ({ imageUrl, title, description, tagline, features, ctaText, ctaLink, isBottom = false, backgroundPosition = 'center' }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const titleVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const containerVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.5,
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
   };
 
-  const wordVariants = {
-    hidden: { opacity: 0, y: 50 },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
     },
   };
 
-  const splitTitle = title.split(' ').map((word, index) => (
-    <motion.span
-      key={index}
-      className={styles.titleWord}
-      variants={wordVariants}
-    >
-      {word}
-    </motion.span>
-  ));
-
   return (
-    <div ref={ref} className={`${styles.parallax} ${isBottom ? styles.bottomParallax : ''}`} style={{ backgroundImage: `url(${imageUrl})` }}>
-      <div className={styles.overlay}></div>
+    <div ref={ref} className={`${styles.parallax} ${isBottom ? styles.bottomParallax : ''}`} style={{ backgroundImage: `url(${imageUrl})`, backgroundPosition: backgroundPosition }}>
+      <div className={`${styles.overlay} ${styles.gradientOverlay}`}></div>
       <motion.div 
         className={styles.parallaxContent}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={titleVariants}
+        variants={containerVariants}
       >
-        <h1 className={styles.title}>{splitTitle}</h1>
+        <span className={raleway.className}>
+          <motion.h1 className={`${styles.title} ${styles.mainTitle}`} variants={itemVariants} initial={{ x: -100 }} animate={inView ? { x: 0 } : { x: -100 }}>{title}</motion.h1>
+        </span>
+        {tagline && (
+          <motion.p className={`${styles.tagline} ${raleway.className}`} variants={itemVariants}>
+            {tagline}
+          </motion.p>
+        )}
         {description && (
-          <motion.p
-            className={styles.description}
-            variants={wordVariants}
-          >
+          <motion.p className={styles.description} variants={itemVariants}>
             {description}
           </motion.p>
+        )}
+        
+        {ctaText && ctaLink && (
+          <motion.div variants={itemVariants}>
+            <Link href={ctaLink} className={`${styles.ctaButton} ${styles.hoverEffect}`}>
+              {ctaText}
+            </Link>
+          </motion.div>
         )}
       </motion.div>
       {isBottom && (
@@ -85,14 +92,11 @@ const ParallaxSection = ({ imageUrl, title, description, isBottom = false }) => 
               ease: "easeInOut"
             }}
           />
-          {/* <motion.div
-            className={styles.monkey}
-            initial={{ y: 50, opacity: 0 }}
-            animate={inView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          /> */}
         </div>
       )}
+      <div className={styles.cardOverlay}>
+        {/* Cards will be rendered here */}
+      </div>
     </div>
   );
 };

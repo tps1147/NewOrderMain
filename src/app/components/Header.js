@@ -6,13 +6,19 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/products">Products</Link></li> {/* New link to Products page */}
-          <li><Link href="/contact">Contact</Link></li>
-        </ul>
+        <div className={styles.navLeft}>
+          <Link href="/">Home</Link>
+          <Link href="/products">Products</Link>
+        </div>
+        <div className={styles.logoContainer}>
+          <Link href="/">
+            <img src="/shak.png" alt="Logo" className={styles.logo} /> {/* Replace with your logo path */}
+          </Link>
+        </div>
+        <div className={styles.navRight}>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
       </nav>
     </header>
   );

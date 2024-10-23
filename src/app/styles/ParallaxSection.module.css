@@ -1,7 +1,19 @@
 .parallax {
-  height: 100vh;
+  height: 80vh;
   background-attachment: fixed;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.parallax1 {
+  height: 80vh;
+  background-attachment: fixed;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -29,13 +41,21 @@
 }
 
 .title {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-size: 6.5rem; /* Increase font size for better visibility */
+  color: #ffffff; /* White color for contrast */
+  text-align: center; /* Center the title */
+  margin: 0; /* Remove default margin */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 
+    2px 2px 0 rgba(0, 0, 0, 0.5), /* First shadow */
+    4px 4px 0 rgba(0, 0, 0, 0.3), /* Second shadow for depth */
+    -3px 1px 0 rgb(121, 121, 121),
+    -4px 2px 0em rgb(121, 121, 121), /* Third shadow for a softer effect */
+    -5px 3px 0 rgb(83, 83, 83),
+    6px 6px 0 rgba(0, 0, 0, 0.1); /* Third shadow for a softer effect */
+  animation: wavyText 2s infinite; /* Apply animation to the title */
+
+  transform: translateY(-10px); /* Slightly lift the title */
 }
 
 .titleWord {
@@ -44,9 +64,10 @@
 }
 
 .description {
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 1.7rem;
+  color: #ffffffd3;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* Styles specific to the bottom parallax section */
@@ -146,3 +167,56 @@
     height: 150px;
   }
 }
+
+.tagline {
+  font-size: 1.8rem;
+  color: #a0faa5;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.features li {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0.5rem 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features li::before {
+  content: '🍌';
+  position: absolute;
+  left: 0;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  background-color: #3d5be0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #4569a0;
+}
+
+/* Additional styles for the main title */
+

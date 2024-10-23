@@ -1,0 +1,90 @@
+.categoryMain {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom-color: #ffffff;
+    border-bottom-width: 20px;
+    border-bottom-style: solid;
+}
+
+.imageContainer {
+  flex: 1; /* Take up 30% of the screen */
+  margin-right: 2rem; /* Space between image and grid */
+}
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.categoryHeader {
+    font-size: 3rem;
+
+    text-shadow: -1px -1px 1px rgb(255, 255, 255), -1px 2px 1px rgb(218, 218, 218), -2px 3px 1px rgb(184, 183, 183), -3px 4px 10px rgb(190, 190, 190); /* Add text shadow */
+    color: #22265c; /* Title color */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.divider {
+    width: 100%;
+    max-width: 500px;
+    height: 4px;
+    background-color: #ffffff; /* White line */
+    margin-bottom: 1rem;
+}
+
+.categoryDescription {
+    font-size: 1.1rem;
+    color: #1b2c88; /* Text color */
+    margin-bottom: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    max-width: 500px;
+    text-align: center;
+}
+
+.categoryImage {
+  width: 500px; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.categorySmall {
+    width: 200px; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.gridContainer {
+  flex: 2; /* Take up 70% of the screen */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 columns */
+  gap: .5rem; /* Space between boxes */
+}
+
+.categoryCard {
+
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff;
+
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -4px 0px inset, rgba(0, 0, 0, 0.158) 0px -2px 0px inset;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.categoryName {
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #0e1850; /* Title color */
+  margin-bottom: 0.5rem;
+}

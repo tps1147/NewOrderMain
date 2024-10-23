@@ -1,0 +1,48 @@
+.contactForm {
+  max-width: 600px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the form */
+  padding: 2rem;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.contactForm h2 {
+  text-align: center;
+  color: #3046c4; /* Title color */
+  margin-bottom: 1.5rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%; /* Full width */
+  padding: 0.8rem; /* Padding for inputs */
+  margin-bottom: 1rem; /* Space between inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+}
+
+.contactForm textarea {
+  height: 100px; /* Fixed height for the message area */
+  resize: none; /* Disable resizing */
+}
+
+.contactForm button {
+  width: 100%; /* Full width */
+  padding: 0.8rem; /* Padding for button */
+  background-color: #3046c4; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.contactForm button:hover {
+  background-color: #4569a0; /* Darker shade on hover */
+}
+
+
